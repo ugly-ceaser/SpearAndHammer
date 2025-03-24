@@ -1,0 +1,60 @@
+{
+    "title": "Job Openings",
+    "location": "Nigeria",
+    "experience": "2 Years+",
+    "jobs": [
+        {
+            "title": "Frontend Web Developer",
+            "location": "Lagos, Nigeria",
+            "experience": "2 Years+",
+            "skills": [
+                "JavaScript",
+                "ES6",
+                "HTML",
+                "SASS/SCSS",
+                "jQuery",
+                "GIT"
+            ],
+            "description": "We are looking for a skilled Frontend Web Developer to join our team. The ideal candidate will have experience in building responsive web applications and a strong understanding of modern web technologies."
+        },
+        {
+            "title": "Backend Developer",
+            "location": "Abuja, Nigeria",
+            "experience": "3 Years+",
+            "skills": [
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "RESTful APIs",
+                "Docker"
+            ],
+            "description": "Join our team as a Backend Developer. You will be responsible for building and maintaining server-side applications and ensuring high performance and responsiveness to requests from the frontend."
+        },
+        {
+            "title": "Full Stack Developer",
+            "location": "Remote",
+            "experience": "4 Years+",
+            "skills": [
+                "React",
+                "Node.js",
+                "GraphQL",
+                "PostgreSQL",
+                "AWS"
+            ],
+            "description": "We are seeking a Full Stack Developer who is proficient in both frontend and backend technologies. You will work on various projects and collaborate with cross-functional teams to deliver high-quality software."
+        },
+        {
+            "title": "UI/UX Designer",
+            "location": "Port Harcourt, Nigeria",
+            "experience": "2 Years+",
+            "skills": [
+                "Figma",
+                "Adobe XD",
+                "Sketch",
+                "User Research",
+                "Prototyping"
+            ],
+            "description": "Looking for a creative UI/UX Designer to join our design team. You will be responsible for creating user-centered designs and improving the overall user experience of our products."
+        }
+    ]
+}
