@@ -75,7 +75,7 @@ export default function Programs() {
                 </h2>
                 <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl">
                     Choose from our proven corporate training programs or let us design a custom solution 
-                    that addresses your organization's specific technology challenges and goals.
+                    that addresses your organization&apos;s specific technology challenges and goals.
                 </p>
             </div>
 
@@ -162,7 +162,7 @@ export default function Programs() {
                                 </svg>
                             </div>
                             <h4 className="font-semibold text-gray-800 mb-2">Skills Assessment</h4>
-                            <p className="text-gray-600 text-sm">Evaluate your team's current skill levels and identify training needs</p>
+                            <p className="text-gray-600 text-sm">Evaluate your team&apos;s current skill levels and identify training needs</p>
                         </div>
                         <div className="text-center p-4">
                             <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mx-auto mb-3">

@@ -56,7 +56,7 @@ export default function ContactForm() {
                     <div className="flex flex-col justify-center text-center lg:text-left px-4 lg:px-8">
             <div className="mb-6">
               <span className="inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-                Let's Build Something Amazing Together
+                Let&apos;s Build Something Amazing Together
               </span>
             </div>
             
@@ -64,8 +64,8 @@ export default function ContactForm() {
               Send Us A Message
             </h1>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
-              Have a project in mind or need expert advice? We'd love to hear from you. 
-              Fill out the form and we'll get back to you within 24 hours.
+              Have a project in mind or need expert advice? We&apos;d love to hear from you. 
+              Fill out the form and we&apos;ll get back to you within 24 hours.
             </p>
 
             {/* Contact Methods */}
@@ -279,7 +279,7 @@ export default function ContactForm() {
               Why Choose Spear & Hammer?
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We're committed to delivering exceptional results and building lasting partnerships with our clients.
+              We&apos;re committed to delivering exceptional results and building lasting partnerships with our clients.
             </p>
           </div>
 

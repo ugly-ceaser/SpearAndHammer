@@ -12,7 +12,7 @@ export default function Benefits() {
                 </h2>
                 <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl">
                     Transform your workforce into a competitive advantage with our comprehensive corporate training programs. 
-                    Invest in your team's growth and watch your business thrive with enhanced skills and productivity.
+                    Invest in your team&apos;s growth and watch your business thrive with enhanced skills and productivity.
                 </p>
             </div>
 

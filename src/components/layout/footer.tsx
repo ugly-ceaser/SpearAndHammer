@@ -40,7 +40,7 @@ export default function Footer() {
             
             // Reset status after 3 seconds
             setTimeout(() => setSubmitStatus('idle'), 3000);
-        } catch (error) {
+        } catch {
             setSubmitStatus('error');
             setTimeout(() => setSubmitStatus('idle'), 3000);
         } finally {

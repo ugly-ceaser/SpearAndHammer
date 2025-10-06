@@ -149,7 +149,7 @@ export default function Enterprise() {
             setSelectedPackage(null);
             alert('Consultation request submitted successfully! We will contact you within 24 hours.');
             
-        } catch (error) {
+        } catch {
             alert('There was an error submitting your request. Please try again.');
         } finally {
             setIsSubmitting(false);
