@@ -2,12 +2,41 @@
 
 import Image from "next/image";
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { useState, useEffect } from 'react';
 
 export default function LogoBanner() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // Simple fallback without parallax for SSR
+    if (!mounted) {
+        return (
+            <div className="w-full py-8 md:py-16 lg:py-24 overflow-hidden">
+                <div className="w-[80vw] mx-auto px-4">
+                    <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2 md:gap-4 lg:gap-6 items-center justify-items-center">
+                        {[...Array(7)].map((_, index) => (
+                            <div key={index} className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 relative transition-transform duration-300 hover:scale-110">
+                                <Image
+                                    src="/icons/logo.png"
+                                    alt={`Logo ${index + 1}`}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <ParallaxProvider>
         <div className="w-full py-8 md:py-16 lg:py-24 overflow-hidden">
-            <div className="container mx-auto px-4">
+            <div className="w-[80vw] mx-auto px-4">
                 <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2 md:gap-4 lg:gap-6 items-center justify-items-center">
                     {/* Left sliding logos */}
                     {[...Array(3)].map((_, index) => (

@@ -6,17 +6,12 @@ export default function Hero() {
         <div className="h-[30vh] w-full flex flex-col items-center md:items-start justify-between border-b border-gray-900 py-8" role="banner">
             <div className="flex-grow flex flex-col justify-center">
                 <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-center md:text-left mb-4 text-gray-800">
-                    Get In Touch
+                    Private Classes
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center md:text-left max-w-2xl">
-                    Ready to transform your business with cutting-edge technology solutions? 
-                    Contact us today to discuss your project requirements and get started.
+                    Personalized one-on-one IT training sessions designed to accelerate your learning journey 
+                    with expert instructors and customized curriculum.
                 </p>
-                <div className="mt-4 text-center md:text-left">
-                    <a href="mailto:info@spearandhammer.com.ng" className="text-black font-medium hover:underline">
-                        info@spearandhammer.com.ng
-                    </a>
-                </div>
             </div>
 
             <div className="w-full flex justify-center md:justify-start">

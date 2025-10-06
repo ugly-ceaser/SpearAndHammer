@@ -5,9 +5,11 @@ import Project from '@/components/projects/projects';
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-white min-h-screen px-[7vw]  ">
+    <main className="bg-white min-h-screen px-2 sm:px-4 md:px-6 lg:px-[7vw]">
       <Hero/>
-      <Project />
+      <div className="mt-16">
+        <Project />
+      </div>
     </main>
   );
 }

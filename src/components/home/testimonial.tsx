@@ -25,9 +25,9 @@ export default function Testimonial() {
     ];
 
     return (
-        <div className="w-full py-16 bg-white">
+        <div className="w-full py-8 md:py-12 bg-white px-1">
             {/* Header Section */}
-            <h2 className="text-4xl font-bold text-left text-gray-800 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left text-gray-800 mb-6 md:mb-10">
                 What Our Clients Say?
             </h2>
 

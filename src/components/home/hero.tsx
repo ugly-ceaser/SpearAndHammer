@@ -8,7 +8,7 @@ export default function Hero(){
         <div className="absolute inset-0" />
         
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center px-2 sm:px-4 md:px-8">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center px-2 sm:px-4 md:px-6">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-4 
               transition-all duration-300 ease-in-out 
               hover:scale-110 hover:text-black hover:rounded-full">

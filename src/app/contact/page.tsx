@@ -5,9 +5,11 @@ import ContactForm from '@/components/contact/contactForm';
 
 const Contact: NextPage = () => {
   return (
-    <main className="bg-white min-h-screen px-[7vw]">
+    <main className="bg-white min-h-screen px-2 sm:px-4 md:px-6 lg:px-[7vw]">
       <Hero />
-      <ContactForm/>
+      <div className="mt-16">
+        <ContactForm/>
+      </div>
     </main>
   );
 };

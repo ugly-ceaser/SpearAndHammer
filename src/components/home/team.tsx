@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from "next/image";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Separate TeamMember component for better reusability
 const TeamMember = ({ name, image, role }: { name: string, image: string, role: string }) => (
@@ -26,6 +26,12 @@ const TeamMember = ({ name, image, role }: { name: string, image: string, role: 
 );
 
 export default function Team() {
+    const [mounted, setMounted] = useState(false);
+    
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+    
     // Base team members array without duplicates
     const teamMembers = [
         { name: "Odo Brenda", image: "/team/bg3.jpg", role: "CEO" },
@@ -33,6 +39,25 @@ export default function Team() {
         { name: "Mike Johnson", image: "/team/bg3.jpg", role: "CFO" },
         { name: "Sarah Williams", image: "/team/bg3.jpg", role: "CMO" },
     ];
+    
+    if (!mounted) {
+        return (
+            <div className="w-full overflow-hidden">
+                <h2 className="text-4xl font-bold text-center mb-12 text-gray-600">
+                    MEET OUR TEAM
+                </h2>
+                <div className="md:hidden flex justify-center">
+                    <div className="w-[300px] inline-flex flex-col items-center flex-shrink-0">
+                        <div className="relative w-full h-[40vh] mb-4 overflow-hidden bg-gray-200">
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-600">
+                            Loading...
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="w-full overflow-hidden">

@@ -22,6 +22,7 @@ export default function Vacancy() {
   const [vacancyData, setVacancyData] = useState<VacancyData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedJobTitle, setSelectedJobTitle] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   const toggleJobDetails = (index: number) => {
     setExpandedJobIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -33,6 +34,7 @@ export default function Vacancy() {
   };
 
   useEffect(() => {
+    setMounted(true);
     const fetchData = () => {
       try {
         const data = Data;
@@ -45,9 +47,24 @@ export default function Vacancy() {
     fetchData();
   }, []);
 
+  // Don't render interactive content until mounted
+  if (!mounted) {
+    return (
+      <div className="h-full w-full flex flex-col sm:flex-row items-start justify-between">
+        <h1 className="text-4xl font-bold text-left mb-4 text-gray-800 w-full sm:w-[50%]">
+          Vacancy
+        </h1>
+        <div className="w-full sm:w-[50%]">
+          <div className="mt-5 text-gray-800">Loading vacancies...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="h-full w-full flex flex-col sm:flex-row items-start justify-between">
-      <h1 className="text-4xl font-bold text-left mb-4 text-gray-800 w-full sm:w-[50%]">
+    <div className="w-[80vw] mx-auto px-4">
+      <div className="h-full w-full flex flex-col sm:flex-row items-center sm:items-start justify-between">
+      <h1 className="text-4xl font-bold text-center sm:text-left mb-4 text-gray-800 w-full sm:w-[50%]">
         Vacancy
       </h1>
 
@@ -61,6 +78,7 @@ export default function Vacancy() {
                   className="bg-black text-white p-2 inline-flex items-center justify-center rounded"
                   aria-label={`Toggle details for ${job.title}`}
                   onClick={() => toggleJobDetails(index)}
+                  suppressHydrationWarning
                 >
                   <FontAwesomeIcon icon={faArrowDown} />
                 </button>
@@ -93,6 +111,7 @@ export default function Vacancy() {
                     <button
                       className="w-[40%] sm:w-[5vw] h-[5vh] bg-[#000] text-[white] rounded"
                       onClick={() => handleApplyClick(job.title)}
+                      suppressHydrationWarning
                     >
                       Apply
                     </button>
@@ -180,6 +199,7 @@ export default function Vacancy() {
           </div>
         </Modal>
       )}
+      </div>
     </div>
   );
 }

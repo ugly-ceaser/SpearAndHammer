@@ -3,14 +3,22 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function Hero() {
     return (
-        <div className="h-[23vh] w-full flex flex-col items-start justify-start border-b border-gray-900" role="banner">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-left mb-4 text-gray-800 flex items-start">
-                Career
-            </h1>
+        <div className="h-[30vh] w-full flex flex-col items-center md:items-start justify-between border-b border-gray-900 py-8" role="banner">
+            <div className="flex-grow flex flex-col justify-center">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-center md:text-left mb-4 text-gray-800">
+                    Career
+                </h1>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center md:text-left max-w-2xl">
+                    Join our team of talented professionals and build a rewarding career 
+                    in technology with opportunities for growth and innovation.
+                </p>
+            </div>
 
-            <button className="bg-black text-white p-2 inline-flex items-center justify-center rounded align-self-end mt-auto mb-4" aria-label="Scroll down">
-                <FontAwesomeIcon icon={faArrowDown} />
-            </button>
+            <div className="w-full flex justify-center md:justify-start">
+                <button className="bg-black text-white p-3 inline-flex items-center justify-center rounded hover:bg-gray-800 transition-colors duration-300" aria-label="Scroll down">
+                    <FontAwesomeIcon icon={faArrowDown} />
+                </button>
+            </div>
         </div>
     );
 }

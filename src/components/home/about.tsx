@@ -13,8 +13,8 @@ export default function About() {
     return (
         <div className="w-full min-h-[50vh] flex flex-col md:flex-row">
             {/* Left Section */}
-            <div className="w-full md:w-1/2 flex flex-col items-center text-left justify-center p-4 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-black">
+            <div className="w-full md:w-1/2 flex flex-col items-center text-center md:text-left justify-center p-3 md:p-6">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8 text-black text-center md:text-left">
                     Empowering Through Technology
                 </h3>
                 <div className="relative w-full max-w-[500px] aspect-square mb-4 md:mb-8 bg-gray-200">
@@ -32,9 +32,9 @@ export default function About() {
             </div>
 
             {/* Right Section */}
-            <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-4 md:p-8">
+            <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-3 md:p-6">
                 <div className={`${mounted ? 'opacity-100' : 'opacity-0'} w-full max-w-xl`}>
-                    <p className="text-gray-600 text-left mb-8 leading-relaxed text-sm md:text-base">
+                    <p className="text-gray-600 text-justify mb-8 leading-relaxed text-sm md:text-base">
                         At Spear & Hammer, we forge excellence in software development and IT training.
                         Our team of seasoned professionals brings decades of industry experience to
                         deliver cutting-edge solutions and comprehensive training programs. We believe

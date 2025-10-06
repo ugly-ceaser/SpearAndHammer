@@ -22,7 +22,7 @@ export default function Clients() {
 
     return (
         <div className="w-full py-8 md:py-16 bg-white mt-8 md:mt-16">
-            <div className="container mx-auto px-4">
+            <div className="w-[80vw] mx-auto px-4">
                 {/* Title and Description Section */}
                 <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12 gap-4 md:gap-8">
                     <h2 className="text-3xl md:text-4xl text-center md:text-left font-bold text-gray-600 w-full md:w-1/3">
