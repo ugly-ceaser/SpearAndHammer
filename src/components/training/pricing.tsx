@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { FaCheck, FaStar } from 'react-icons/fa';
+import pricingData from '@/data/pricing.json';
 
 interface FormData {
     fullName: string;
@@ -15,6 +16,16 @@ interface FormData {
 
 interface FormErrors {
     [key: string]: string;
+}
+
+interface PricingPlan {
+    id: string;
+    name: string;
+    price: string;
+    duration: string;
+    sessions: string;
+    popular: boolean;
+    features: string[];
 }
 
 export default function Pricing() {
@@ -33,58 +44,7 @@ export default function Pricing() {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const pricingPlans = [
-        {
-            id: 'starter',
-            name: 'Starter Package',
-            price: '₦150,000',
-            duration: '4 weeks',
-            sessions: '8 sessions',
-            popular: false,
-            features: [
-                '1-on-1 instruction',
-                'Flexible scheduling',
-                'Basic project included',
-                'Email support',
-                'Course materials',
-                'Certificate of completion'
-            ]
-        },
-        {
-            id: 'professional',
-            name: 'Professional Package',
-            price: '₦280,000',
-            duration: '8 weeks',
-            sessions: '16 sessions',
-            popular: true,
-            features: [
-                'Everything in Starter',
-                'Advanced projects',
-                'Career mentoring',
-                'Priority support',
-                'Interview preparation',
-                'Job placement assistance',
-                'Portfolio development'
-            ]
-        },
-        {
-            id: 'enterprise',
-            name: 'Enterprise Package',
-            price: '₦450,000',
-            duration: '12 weeks',
-            sessions: '24 sessions',
-            popular: false,
-            features: [
-                'Everything in Professional',
-                'Custom curriculum',
-                'Industry specialization',
-                'Certification prep',
-                'Lifetime mentorship',
-                'Advanced project portfolio',
-                'Guaranteed job interviews'
-            ]
-        }
-    ];
+    const pricingPlans: PricingPlan[] = pricingData;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;

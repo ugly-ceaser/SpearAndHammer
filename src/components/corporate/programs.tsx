@@ -1,69 +1,9 @@
 'use client';
 import Image from 'next/image';
+import programsData from '@/data/programs.json';
 
 export default function Programs() {
-    const trainingPrograms = [
-        {
-            id: 1,
-            title: "Digital Transformation Workshop",
-            duration: "3-5 days",
-            participants: "5-20 employees",
-            description: "Comprehensive program covering cloud migration, process automation, and digital strategy implementation for modern businesses.",
-            modules: ["Cloud Strategy", "Process Automation", "Digital Tools", "Change Management"],
-            image: "/bg/bg1.png",
-            deliveryMode: "On-site & Virtual"
-        },
-        {
-            id: 2,
-            title: "Cybersecurity Awareness Training",
-            duration: "2-3 days",
-            participants: "10-50 employees",
-            description: "Essential cybersecurity training to protect your organization from threats and ensure compliance with security standards.",
-            modules: ["Threat Recognition", "Data Protection", "Incident Response", "Compliance"],
-            image: "/bg/bg2.png",
-            deliveryMode: "On-site & Virtual"
-        },
-        {
-            id: 3,
-            title: "Data Analytics for Business",
-            duration: "4-6 days",
-            participants: "8-25 employees",
-            description: "Transform your team into data-driven decision makers with hands-on analytics training and business intelligence tools.",
-            modules: ["Data Analysis", "Visualization", "Business Intelligence", "Predictive Analytics"],
-            image: "/bg/bg1.png",
-            deliveryMode: "On-site & Virtual"
-        },
-        {
-            id: 4,
-            title: "Agile & DevOps Implementation",
-            duration: "5-7 days",
-            participants: "10-30 employees",
-            description: "Accelerate your development processes with Agile methodologies and DevOps practices for efficient software delivery.",
-            modules: ["Agile Frameworks", "CI/CD Pipelines", "Automation Tools", "Team Collaboration"],
-            image: "/bg/bg2.png",
-            deliveryMode: "On-site & Virtual"
-        },
-        {
-            id: 5,
-            title: "Leadership in Technology",
-            duration: "3-4 days",
-            participants: "5-15 executives",
-            description: "Executive-level training for technology leadership, strategic planning, and managing digital transformation initiatives.",
-            modules: ["Tech Strategy", "Team Leadership", "Innovation Management", "Digital Vision"],
-            image: "/bg/bg1.png",
-            deliveryMode: "Executive Retreat"
-        },
-        {
-            id: 6,
-            title: "Custom Enterprise Solutions",
-            duration: "Flexible",
-            participants: "Variable",
-            description: "Tailored training programs designed specifically for your organization's unique technology needs and business objectives.",
-            modules: ["Custom Curriculum", "Specific Technologies", "Industry Focus", "Scalable Solutions"],
-            image: "/bg/bg2.png",
-            deliveryMode: "Customized"
-        }
-    ];
+    const trainingPrograms = programsData;
 
     return (
         <div className="w-full py-16 bg-gray-50">

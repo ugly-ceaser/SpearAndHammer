@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { LoadingLink } from '@/components/ui/LoadingLink';
 
 export default function Footer() {
     const [mounted, setMounted] = useState(false);
@@ -185,9 +186,9 @@ export default function Footer() {
                  <div className="mt-16 pt-12 border-t border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 text-center">
                     {/* Logo and Company Info */}
                     <div className="flex flex-col items-center px-6 py-8 border-r-0 md:border-r border-gray-200">
-                        <Link href="/" className="mb-6">
+                        <LoadingLink href="/" className="mb-6">
                             <h2 className="text-2xl font-bold text-gray-800">Spear & Hammer</h2>
-                        </Link>
+                        </LoadingLink>
                         <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-xs">
                             Forging excellence in software development and IT training. 
                             We transform ideas into digital solutions and raw talent into refined expertise.
@@ -215,21 +216,21 @@ export default function Footer() {
                     <div className="flex flex-col items-center text-center px-6 py-8">
                         <h3 className="text-lg font-bold mb-6 text-gray-800">PAGES</h3>
                         <div className="flex flex-col items-center gap-3">
-                            <Link href="/about" className="text-gray-600 hover:text-gray-800">
+                            <LoadingLink href="/about" className="text-gray-600 hover:text-gray-800">
                                 About Us
-                            </Link>
-                            <Link href="/training" className="text-gray-600 hover:text-gray-800">
+                            </LoadingLink>
+                            <LoadingLink href="/training/private" className="text-gray-600 hover:text-gray-800">
                                 Trainings
-                            </Link>
-                            <Link href="/projects" className="text-gray-600 hover:text-gray-800">
+                            </LoadingLink>
+                            <LoadingLink href="/projects" className="text-gray-600 hover:text-gray-800">
                                 Projects
-                            </Link>
-                            <Link href="/contact" className="text-gray-600 hover:text-gray-800">
+                            </LoadingLink>
+                            <LoadingLink href="/contact" className="text-gray-600 hover:text-gray-800">
                                 Contact Us
-                            </Link>
-                            <Link href="/privacy" className="text-gray-600 hover:text-gray-800">
+                            </LoadingLink>
+                            <LoadingLink href="/privacy" className="text-gray-600 hover:text-gray-800">
                                 Privacy Policy
-                            </Link>
+                            </LoadingLink>
                         </div>
                     </div>
                 </div>
@@ -262,15 +263,15 @@ export default function Footer() {
                         © 2024 Spear & Hammer. All rights reserved.
                     </p>
                     <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
-                        <Link href="/privacy" className="hover:text-gray-800 transition-colors">
+                        <LoadingLink href="/privacy" className="hover:text-gray-800 transition-colors">
                             Privacy Policy
-                        </Link>
-                        <Link href="/terms" className="hover:text-gray-800 transition-colors">
+                        </LoadingLink>
+                        <LoadingLink href="/terms" className="hover:text-gray-800 transition-colors">
                             Terms of Service
-                        </Link>
-                        <Link href="/cookies" className="hover:text-gray-800 transition-colors">
+                        </LoadingLink>
+                        <LoadingLink href="/cookies" className="hover:text-gray-800 transition-colors">
                             Cookie Policy
-                        </Link>
+                        </LoadingLink>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import Data from '@/data/vacancies.json';
-import Modal from './modal'; // Adjust path based on your folder structure
+import Modal from '../ui/Modal';
 
 interface VacancyData {
   title: string;

@@ -1,13 +1,17 @@
-'use client';
-import React from 'react';
+import type { Metadata } from "next";
 import Hero from '@/components/training/hero';
 import Features from '@/components/training/features';
 import Courses from '@/components/training/courses';
 import Pricing from '@/components/training/pricing';
 
+export const metadata: Metadata = {
+  title: "Private Training Classes - Spear & Hammer",
+  description: "Personalized IT training classes designed for individual learning. Master programming, web development, and software engineering with expert instructors.",
+};
+
 export default function PrivateClassesPage() {
   return (
-    <main className="bg-white min-h-screen px-2 sm:px-4 md:px-6 lg:px-[7vw]">
+    <div className="w-[80vw] mx-auto">
       <Hero />
       <div className="mt-16">
         <Features />
@@ -18,6 +22,6 @@ export default function PrivateClassesPage() {
       <div className="mt-16">
         <Pricing />
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { FaCheck, FaBuilding, FaUsers, FaCrown } from 'react-icons/fa';
+import enterpriseData from '@/data/enterprise.json';
 
 interface ConsultationFormData {
     companyName: string;
@@ -18,6 +19,15 @@ interface ConsultationFormData {
 
 interface FormErrors {
     [key: string]: string;
+}
+
+interface EnterprisePackage {
+    id: string;
+    name: string;
+    price: string;
+    participants: string;
+    popular: boolean;
+    features: string[];
 }
 
 export default function Enterprise() {
@@ -39,58 +49,7 @@ export default function Enterprise() {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const enterprisePackages = [
-        {
-            id: 'starter',
-            name: 'Startup Package',
-            price: 'From ₦500,000',
-            participants: '5-15 employees',
-            popular: false,
-            features: [
-                'Skills assessment',
-                'Customized curriculum',
-                '2-3 training modules',
-                'On-site or virtual delivery',
-                'Basic post-training support',
-                'Progress tracking',
-                'Certificate of completion'
-            ]
-        },
-        {
-            id: 'growth',
-            name: 'Growth Package',
-            price: 'From ₦1,200,000',
-            participants: '15-50 employees',
-            popular: true,
-            features: [
-                'Everything in Startup',
-                'Multiple department training',
-                '5-7 training modules',
-                'Blended learning approach',
-                'Advanced analytics',
-                'Quarterly check-ins',
-                'Manager training included',
-                'Custom learning portal'
-            ]
-        },
-        {
-            id: 'enterprise',
-            name: 'Enterprise Package',
-            price: 'Custom Quote',
-            participants: '50+ employees',
-            popular: false,
-            features: [
-                'Everything in Growth',
-                'Organization-wide rollout',
-                'Unlimited modules',
-                'Dedicated account manager',
-                'Executive coaching',
-                'Custom integration',
-                'Ongoing consultation',
-                'Multi-year agreements'
-            ]
-        }
-    ];
+    const enterprisePackages: EnterprisePackage[] = enterpriseData;
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;

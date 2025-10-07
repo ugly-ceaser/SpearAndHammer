@@ -1,13 +1,17 @@
-'use client';
-import React from 'react';
+import type { Metadata } from "next";
 import Hero from '@/components/corporate/hero';
 import Benefits from '@/components/corporate/benefits';
 import Programs from '@/components/corporate/programs';
 import Enterprise from '@/components/corporate/enterprise';
 
+export const metadata: Metadata = {
+  title: "Corporate Training Services - Spear & Hammer",
+  description: "Comprehensive corporate IT training programs for teams and organizations. Boost your workforce skills with customized technology training solutions.",
+};
+
 export default function CorporateTrainingPage() {
   return (
-    <main className="bg-white min-h-screen px-2 sm:px-4 md:px-6 lg:px-[7vw]">
+    <div className="w-[80vw] mx-auto">
       <Hero />
       <div className="mt-16">
         <Benefits />
@@ -18,6 +22,6 @@ export default function CorporateTrainingPage() {
       <div className="mt-16">
         <Enterprise />
       </div>
-    </main>
+    </div>
   );
 }
