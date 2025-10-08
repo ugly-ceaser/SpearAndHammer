@@ -1,17 +1,18 @@
 import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG, IS_DEVELOPMENT, isEmailJSConfigured } from '../config/emailjs';
 
-// EmailJS configuration from environment variables
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+// EmailJS configuration for static build
+const EMAILJS_SERVICE_ID = EMAILJS_CONFIG.SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = EMAILJS_CONFIG.TEMPLATE_ID;  
+const EMAILJS_PUBLIC_KEY = EMAILJS_CONFIG.PUBLIC_KEY;
 
 // Validate configuration
 const validateEmailJSConfig = () => {
-  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-    console.error('EmailJS configuration missing. Please check your environment variables:');
-    console.error('- NEXT_PUBLIC_EMAILJS_SERVICE_ID:', EMAILJS_SERVICE_ID ? '✓' : '❌');
-    console.error('- NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:', EMAILJS_TEMPLATE_ID ? '✓' : '❌');
-    console.error('- NEXT_PUBLIC_EMAILJS_PUBLIC_KEY:', EMAILJS_PUBLIC_KEY ? '✓' : '❌');
+  if (!isEmailJSConfigured()) {
+    console.error('EmailJS configuration missing or using default values. Please update src/config/emailjs.ts:');
+    console.error('- SERVICE_ID:', EMAILJS_SERVICE_ID !== 'service_your_service_id' ? '✓' : '❌ (using default)');
+    console.error('- TEMPLATE_ID:', EMAILJS_TEMPLATE_ID !== 'template_your_template_id' ? '✓' : '❌ (using default)');
+    console.error('- PUBLIC_KEY:', EMAILJS_PUBLIC_KEY !== 'your_public_key_here' ? '✓' : '❌ (using default)');
     return false;
   }
   return true;
@@ -167,7 +168,7 @@ export const sendFormSubmission = async (
     const submission = createFormSubmission(formType, formData);
     
     // Check if EmailJS is disabled (for development/testing)
-    if (process.env.NEXT_PUBLIC_EMAILJS_DISABLED === 'true') {
+    if (IS_DEVELOPMENT) {
       console.log('📧 EMAIL SIMULATION - Would send to info@spearandhammertech.com:');
       console.log('Form Type:', formType);
       console.log('Submission ID:', submission.submissionId);
