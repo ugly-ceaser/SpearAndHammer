@@ -25,7 +25,7 @@ export default function Hero() {
         <p className="max-w-2xl md:max-w-3xl text-center text-gray-600 text-sm sm:text-base md:text-lg px-4 
               transition-all duration-300 ease-in-out 
               hover:scale-105 hover:text-black hover:rounded-3xl">
-          Et pellentesque porttitor odio dui. Erat sit platea vitae in parturient egestas etiam.
+          We are passionate about creating innovative software solutions and providing world-class IT training that bridges the gap between technology and human potential.
           Ornare vitae orci maecenas adipiscing dolor facilisis habitasse mattis.
           Eget magna neque eget eleifend velit viverra sem praesent ultricies.
           Facilisi diam luctus tortor fusce parturient proin nulla.

@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import { FaCheck, FaBuilding, FaUsers, FaCrown } from 'react-icons/fa';
 import enterpriseData from '@/data/enterprise.json';
+import Modal from '../ui/Modal';
+import { sendFormSubmission } from '@/lib/emailService';
+import { useToast } from '@/components/ui/Toast';
 
 interface ConsultationFormData {
     companyName: string;
@@ -48,6 +51,7 @@ export default function Enterprise() {
     });
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const { showToast } = useToast();
 
     const enterprisePackages: EnterprisePackage[] = enterpriseData;
 
@@ -106,10 +110,19 @@ export default function Enterprise() {
             });
             setShowConsultationForm(false);
             setSelectedPackage(null);
-            alert('Consultation request submitted successfully! We will contact you within 24 hours.');
+            showToast({
+                type: 'success',
+                title: 'Consultation Request Submitted!',
+                message: 'We will contact you within 24 hours to schedule your consultation.'
+            });
             
-        } catch {
-            alert('There was an error submitting your request. Please try again.');
+        } catch (error) {
+            console.error('Corporate consultation submission error:', error);
+            showToast({
+                type: 'error',
+                title: 'Submission Failed',
+                message: 'Please try again or email us directly at info@spearandhammertech.com'
+            });
         } finally {
             setIsSubmitting(false);
         }
@@ -191,31 +204,15 @@ export default function Enterprise() {
             </div>
 
             {/* Consultation Form Modal */}
-            {showConsultationForm && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-                    <div className="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-                        <div className="p-6 border-b border-gray-200">
-                            <div className="flex justify-between items-center">
-                                <h3 className="text-2xl font-bold text-gray-800">
-                                    Schedule Corporate Training Consultation
-                                </h3>
-                                <button 
-                                    onClick={() => setShowConsultationForm(false)}
-                                    className="text-gray-500 hover:text-gray-700"
-                                >
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                            {selectedPackage && (
-                                <p className="text-gray-600 mt-2">
-                                    Selected: {enterprisePackages.find(p => p.id === selectedPackage)?.name}
-                                </p>
-                            )}
-                        </div>
+            <Modal
+                isOpen={showConsultationForm}
+                onClose={() => setShowConsultationForm(false)}
+                title="Schedule Corporate Training Consultation"
+                subtitle={selectedPackage ? `Selected: ${enterprisePackages.find(p => p.id === selectedPackage)?.name}` : undefined}
+                maxWidth="3xl"
+            >
 
-                        <form onSubmit={handleSubmit} className="p-6 space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Company Information */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
@@ -424,7 +421,7 @@ export default function Enterprise() {
                                 />
                                 <label htmlFor="privacyPolicy" className="ml-3 text-gray-700">
                                     I agree to the{" "}
-                                    <a href="#" className="text-black underline">
+                                    <a href="/privacy" className="text-black underline hover:text-gray-800">
                                         Privacy Policy
                                     </a>{" "}
                                     and consent to being contacted about corporate training solutions.
@@ -459,9 +456,7 @@ export default function Enterprise() {
                                 </button>
                             </div>
                         </form>
-                    </div>
-                </div>
-            )}
+            </Modal>
 
             {/* Contact Information */}
             <div className="mt-16 bg-gray-50 rounded-lg p-8 text-center">

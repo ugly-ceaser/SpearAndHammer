@@ -11,6 +11,7 @@ import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { PerformanceTracker } from '@/components/analytics/PerformanceTracker';
 import { PageTracker } from '@/components/analytics/PageTracker';
 import { ErrorTracker } from '@/components/analytics/ErrorTracker';
+import { ToastProvider } from '@/components/ui/Toast';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,23 +40,25 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
         suppressHydrationWarning
       >
-        <CookieProvider>
-          <SessionProvider>
-            <LoadingProvider>
-              <Navbar />
-              <main className="mt-[15vh]">
-                {children}
-              </main>
-              <Footer />
-              <CookieConsent />
-              <GoogleAnalytics />
-              <PerformanceTracker />
-              <PageTracker />
-              <ActivityTracker />
-              <ErrorTracker />
-            </LoadingProvider>
-          </SessionProvider>
-        </CookieProvider>
+        <ToastProvider>
+          <CookieProvider>
+            <SessionProvider>
+              <LoadingProvider>
+                <Navbar />
+                <main className="mt-[15vh]">
+                  {children}
+                </main>
+                <Footer />
+                <CookieConsent />
+                <GoogleAnalytics />
+                <PerformanceTracker />
+                <PageTracker />
+                <ActivityTracker />
+                <ErrorTracker />
+              </LoadingProvider>
+            </SessionProvider>
+          </CookieProvider>
+        </ToastProvider>
       </body>
     </html>
   );

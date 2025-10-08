@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { LoadingLink } from '@/components/ui/LoadingLink';
+import { sendFormSubmission } from '@/lib/emailService';
+import { useToast } from '@/components/ui/Toast';
 
 export default function Footer() {
     const [mounted, setMounted] = useState(false);
@@ -14,7 +16,7 @@ export default function Footer() {
         message: ""
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const { showToast } = useToast();
 
     useEffect(() => {
         setMounted(true);
@@ -30,20 +32,25 @@ export default function Footer() {
         setIsSubmitting(true);
         
         try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const result = await sendFormSubmission('quotationRequest', formData);
             
-            // Handle quotation request logic here
-            console.log('Quotation request:', formData);
-            
-            setSubmitStatus('success');
-            setFormData({ name: "", email: "", projectType: "", message: "" });
-            
-            // Reset status after 3 seconds
-            setTimeout(() => setSubmitStatus('idle'), 3000);
-        } catch {
-            setSubmitStatus('error');
-            setTimeout(() => setSubmitStatus('idle'), 3000);
+            if (result.success) {
+                setFormData({ name: "", email: "", projectType: "", message: "" });
+                showToast({
+                    type: 'success',
+                    title: 'Quotation Request Sent!',
+                    message: 'We will review your project requirements and get back to you within 24 hours.'
+                });
+            } else {
+                throw new Error(result.error || 'Submission failed');
+            }
+        } catch (error) {
+            console.error('Quotation request submission error:', error);
+            showToast({
+                type: 'error',
+                title: 'Request Failed',
+                message: 'Please try again or email us directly at info@spearandhammertech.com'
+            });
         } finally {
             setIsSubmitting(false);
         }
@@ -137,23 +144,7 @@ export default function Footer() {
                                         Submitting...
                                     </>
                                 ) : (
-                                    submitStatus === 'success' ? (
-                                        <>
-                                            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                            </svg>
-                                            Request Sent!
-                                        </>
-                                    ) : submitStatus === 'error' ? (
-                                        <>
-                                            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                                            </svg>
-                                            Try Again
-                                        </>
-                                    ) : (
-                                        'Request Quote'
-                                    )
+                                    'Request Quote'
                                 )}
                             </button>
                         </form>
@@ -164,16 +155,16 @@ export default function Footer() {
                         <h3 className="text-lg font-bold mb-4 text-gray-800">FOLLOW US</h3>
                         <div className="flex gap-4 mb-6">
                             <a href="#" className="p-2 bg-gray-100 rounded-full hover:bg-black hover:text-white transition-colors duration-200 group">
-                                <Image src="icons/x.svg" alt="Twitter(X)" width={20} height={20} className="group-hover:invert" />
+                                <Image src="/icons/x.svg" alt="Twitter(X)" width={20} height={20} className="group-hover:invert" />
                             </a>
                             <a href="#" className="p-2 bg-gray-100 rounded-full hover:bg-black hover:text-white transition-colors duration-200 group">
                                 <Image src="/icons/fb.svg" alt="Facebook" width={20} height={20} className="group-hover:invert" />
                             </a>
                             <a href="#" className="p-2 bg-gray-100 rounded-full hover:bg-black hover:text-white transition-colors duration-200 group">
-                                <Image src="icons/whatsapp.svg" alt="WhatsApp" width={20} height={20} className="group-hover:invert" />
+                                <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={20} height={20} className="group-hover:invert" />
                             </a>
                             <a href="#" className="p-2 bg-gray-100 rounded-full hover:bg-black hover:text-white transition-colors duration-200 group">
-                                <Image src="icons/linkedin.svg" alt="LinkedIn" width={20} height={20} className="group-hover:invert" />
+                                <Image src="/icons/linkedin.svg" alt="LinkedIn" width={20} height={20} className="group-hover:invert" />
                             </a>
                         </div>
                         <p className="text-sm text-gray-500 text-center max-w-sm">

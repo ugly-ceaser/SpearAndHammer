@@ -29,11 +29,7 @@ export default function Hero(){
           <p className="max-w-3xl text-center text-gray-600 text-sm sm:text-base md:text-lg px-2 
               transition-all duration-300 ease-in-out 
               hover:scale-105 hover:text-black hover:rounded-3xl">
-            Et pellentesque porttitor odio dui. Erat sit platea vitae in parturient egestas etiam. 
-            Ornare vitae orci maecenas adipiscing dolor facilisis habitasse mattis. 
-            Eget magna neque eget eleifend velit viverra sem praesent ultricies. 
-            Facilisi diam luctus tortor fusce parturient proin nulla. 
-            Integer mi elit amet mollis gravida sapien mollis. Tempor bibendu
+            We deliver cutting-edge software solutions and comprehensive IT training programs that empower businesses and individuals to thrive in the digital age. From custom web applications to enterprise software development, we transform your vision into robust, scalable technology solutions.
           </p>
         </div>
       </div>
