@@ -24,6 +24,8 @@ export default function LogoBanner() {
                                     alt={`Logo ${index + 1}`}
                                     fill
                                     className="object-contain"
+                                    priority={index < 3}
+                                    sizes="(max-width: 768px) 20vw, 10vw"
                                 />
                             </div>
                         ))}
@@ -52,6 +54,7 @@ export default function LogoBanner() {
                                 alt={`Logo ${index + 1}`}
                                 fill
                                 className="object-contain"
+                                sizes="(max-width: 768px) 20vw, 10vw"
                             />
                         </Parallax>
                     ))}
@@ -63,6 +66,8 @@ export default function LogoBanner() {
                             alt="Center Logo"
                             fill
                             className="object-contain"
+                            priority
+                            sizes="(max-width: 768px) 20vw, 10vw"
                         />
                     </div>
 
@@ -80,6 +85,7 @@ export default function LogoBanner() {
                                 alt={`Logo ${index + 4}`}
                                 fill
                                 className="object-contain"
+                                sizes="(max-width: 768px) 20vw, 10vw"
                             />
                         </Parallax>
                     ))}

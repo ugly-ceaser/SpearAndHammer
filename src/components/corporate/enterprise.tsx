@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { FaCheck, FaBuilding, FaUsers, FaCrown } from 'react-icons/fa';
 import enterpriseData from '@/data/enterprise.json';
 import Modal from '../ui/Modal';
-import { sendFormSubmission } from '@/lib/emailService';
 import { useToast } from '@/components/ui/Toast';
 
 interface ConsultationFormData {

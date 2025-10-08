@@ -1,12 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation';
 import { useSession } from '@/context/SessionContext';
 import { useAnalytics } from '@/context/CookieContext';
 
 export function PageTracker() {
-  const router = useRouter();
   const { trackPageView } = useSession();
   const analyticsEnabled = useAnalytics();
   const initializedRef = useRef(false);

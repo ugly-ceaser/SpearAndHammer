@@ -100,6 +100,9 @@ export default function Navbar() {
             <LoadingLink href="/projects" className="text-gray-800 hover:text-gray-600 transition-colors duration-300">
               Projects
             </LoadingLink>
+            <LoadingLink href="/services" className="text-gray-800 hover:text-gray-600 transition-colors duration-300">
+              Services
+            </LoadingLink>
 
             {/* Dropdown Wrapper */}
             <div
@@ -232,6 +235,13 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Projects
+            </LoadingLink>
+            <LoadingLink
+              href="/services"
+              className="block px-3 py-2 text-gray-800 hover:bg-gray-50 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Services
             </LoadingLink>
 
             {/* Mobile Dropdown */}

@@ -325,7 +325,7 @@ export default function ContactForm() {
                   )}
                 </button>
                 {submitStatus === 'success' && (
-                  <p className="text-green-600 text-sm mt-2 text-center">Thank you! We'll get back to you within 24 hours.</p>
+                  <p className="text-green-600 text-sm mt-2 text-center">Thank you! We&apos;ll get back to you within 24 hours.</p>
                 )}
                 {submitStatus === 'error' && (
                   <p className="text-red-600 text-sm mt-2 text-center">Failed to send message. Please try again or email us directly.</p>

@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useCookies } from '@/context/CookieContext';
 import { useSession } from '@/context/SessionContext';
-import { usePerformanceMetrics } from '@/components/analytics/PerformanceTracker';
-
 interface AnalyticsData {
   performance: any;
   session: any;
@@ -14,7 +12,6 @@ interface AnalyticsData {
 export default function AnalyticsDashboard() {
   const { preferences } = useCookies();
   const { session } = useSession();
-  const performanceMetrics = usePerformanceMetrics();
   const [analyticsData, setAnalyticsData] = useState<AnalyticsData>({
     performance: {},
     session: null,

@@ -283,7 +283,7 @@ export default function Vacancy() {
           {submitStatus === 'success' && (
             <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
               <p className="text-green-800 font-medium">✅ Application submitted successfully!</p>
-              <p className="text-green-600 text-sm mt-1">We'll review your application and get back to you soon.</p>
+              <p className="text-green-600 text-sm mt-1">We&apos;ll review your application and get back to you soon.</p>
             </div>
           )}
           

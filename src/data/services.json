@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Consultation",
+        "description": "Expert technical consultation to guide your project from concept to completion. We analyze requirements, recommend technologies, and create strategic roadmaps.",
+        "icon": "💼",
+        "features": [
+            "Technical Architecture Review",
+            "Technology Stack Recommendations",
+            "Project Feasibility Analysis",
+            "Performance Optimization",
+            "Security Assessment"
+        ],
+        "pricing": "Starting from $150/hour",
+        "duration": "1-4 weeks"
+    },
+    {
+        "id": 2,
+        "title": "Project Management",
+        "description": "Comprehensive project management services ensuring timely delivery, quality control, and stakeholder satisfaction throughout the development lifecycle.",
+        "icon": "📋",
+        "features": [
+            "Agile/Scrum Implementation",
+            "Resource Planning & Allocation",
+            "Risk Management",
+            "Quality Assurance",
+            "Stakeholder Communication"
+        ],
+        "pricing": "Starting from $120/hour",
+        "duration": "Project Duration"
+    },
+    {
+        "id": 3,
+        "title": "Development",
+        "description": "Full-stack development services covering web, mobile, and desktop applications using cutting-edge technologies and best practices.",
+        "icon": "💻",
+        "features": [
+            "Web Application Development",
+            "Mobile App Development",
+            "API Development & Integration",
+            "Database Design & Implementation",
+            "Cloud Solutions"
+        ],
+        "pricing": "Starting from $80/hour",
+        "duration": "2-12 months"
+    },
+    {
+        "id": 4,
+        "title": "System Design",
+        "description": "Scalable and robust system architecture design that grows with your business needs while maintaining performance and security.",
+        "icon": "🏗️",
+        "features": [
+            "Microservices Architecture",
+            "Database Schema Design",
+            "API Design & Documentation",
+            "Scalability Planning",
+            "Integration Architecture"
+        ],
+        "pricing": "Starting from $180/hour",
+        "duration": "2-8 weeks"
+    },
+    {
+        "id": 5,
+        "title": "Project Costing",
+        "description": "Detailed project estimation and budgeting services to help you plan and allocate resources effectively for successful project delivery.",
+        "icon": "💰",
+        "features": [
+            "Detailed Cost Breakdown",
+            "Resource Estimation",
+            "Timeline Planning",
+            "Risk Assessment",
+            "ROI Analysis"
+        ],
+        "pricing": "Starting from $500 per project",
+        "duration": "1-2 weeks"
+    },
+    {
+        "id": 6,
+        "title": "Recruitment",
+        "description": "Technical recruitment services to help you find and hire the best talent for your development team and technical positions.",
+        "icon": "👥",
+        "features": [
+            "Technical Screening",
+            "Interview Process Design",
+            "Candidate Assessment",
+            "Skills Evaluation",
+            "Onboarding Support"
+        ],
+        "pricing": "Starting from $2000 per hire",
+        "duration": "2-6 weeks"
+    }
+]

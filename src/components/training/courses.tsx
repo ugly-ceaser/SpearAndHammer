@@ -32,6 +32,8 @@ export default function Courses() {
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 className="object-cover"
+                                priority={course.id <= 3}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                             <div className="absolute bottom-4 left-4">

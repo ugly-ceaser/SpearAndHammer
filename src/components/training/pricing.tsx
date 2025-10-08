@@ -216,7 +216,8 @@ export default function Pricing() {
                                         name="fullName"
                                         value={formData.fullName}
                                         onChange={handleInputChange}
-                                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-gray-800"
+                                        placeholder="Enter your full name"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white text-gray-900 placeholder-gray-500"
                                         required
                                     />
                                     {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}

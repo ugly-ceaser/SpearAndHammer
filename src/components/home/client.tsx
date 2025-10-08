@@ -55,6 +55,7 @@ export default function Clients() {
                                         fill
                                         className="object-contain"
                                         sizes="(max-width: 768px) 50vw, 33vw"
+                                        priority={index < 3}
                                     />
                                 )}
                             </div>
